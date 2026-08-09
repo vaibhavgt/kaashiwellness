@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spa Menu &amp; Pricing — Kaashi Wellness, Tapovan, Rishikesh</title>
 <meta name="description" content="Complete price list for Kaashi Wellness, Tapovan, Rishikesh: full body massage from ₹1,999, express massages ₹999, Ayurveda, facials, body scrubs and private yoga sessions.">
-<link rel="canonical" href="https://kaashiwellness.com/pricing.html">
+<link rel="canonical" href="https://kaashiwellness.in/pricing.html">
 <meta property="og:title" content="Spa Menu &amp; Pricing — Kaashi Wellness, Rishikesh">
 <meta property="og:description" content="Every treatment and price at Kaashi Wellness, Tapovan — massage, Ayurveda, facials, scrubs and yoga. Open daily 10 AM–8 PM.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kaashiwellness.com/pricing.html">
+<meta property="og:url" content="https://kaashiwellness.in/pricing.html">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#f2d9de">
 <meta name="geo.region" content="IN-UT">
@@ -21,9 +21,9 @@
 {
   "@context": "https://schema.org",
   "@type": "DaySpa",
-  "@id": "https://kaashiwellness.com/#spa",
+  "@id": "https://kaashiwellness.in/#spa",
   "name": "Kaashi Wellness",
-  "url": "https://kaashiwellness.com/",
+  "url": "https://kaashiwellness.in/",
   "telephone": "+919548479582",
   "priceRange": "₹₹",
   "address": {
@@ -54,8 +54,8 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kaashiwellness.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Menu & Pricing", "item": "https://kaashiwellness.com/pricing.html" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kaashiwellness.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Menu & Pricing", "item": "https://kaashiwellness.in/pricing.html" }
   ]
 }
 </script>
@@ -69,7 +69,7 @@
       <a href="index.html#services">Treatments</a>
       <a href="index.html#yoga">Yoga</a>
       <a href="index.html#faq">FAQ</a>
-      <a class="btn" href="tel:+919548479582">Call to book</a>
+      <a class="btn" href="tel:+919548479582" data-book="a session">Book a session</a>
     </div>
   </div>
 </nav>
@@ -238,7 +238,7 @@
   <div class="wrap">
     <h2>Ready when you are</h2>
     <p class="prose dim" style="margin:0 auto 28px">Open every day, 10 AM to 8 PM, on Secret Waterfall Road near Arista Haven, Tapovan — a short walk from Laxman Jhula.</p>
-    <a class="btn" href="tel:+919548479582">Call +91 95484 79582</a>
+    <a class="btn" href="tel:+919548479582" data-book="a session">Book a session</a>
   </div>
 </section>
 
@@ -268,9 +268,13 @@
   </div>
 </footer>
 
-<a class="sticky-call" href="tel:+919548479582">📞 Call Kaashi Wellness — open till 8 PM</a>
+<a class="sticky-call" href="tel:+919548479582" data-book="a session">Book — call or WhatsApp · open till 8 PM</a>
 
 <div class="fabs" id="fabs">
+  <button class="fab music" id="musicToggle" aria-pressed="false" aria-label="Play calming music" title="Calming music">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6Z"/></svg>
+    <span class="slash" aria-hidden="true"></span>
+  </button>
   <a class="fab wa" href="https://wa.me/919548479582" rel="noopener" aria-label="Chat with Kaashi Wellness on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.6-.7c.2-.2.2-.4.1-.6l-.8-1.8c-.1-.4-.3-.6-.6-.6h-.8Z"/></svg>
   </a>
@@ -293,6 +297,115 @@
     }
     lastY = scrollY;
   }, {passive: true});
+</script>
+
+
+<div class="book-modal" id="bookModal" hidden>
+  <div class="book-sheet" role="dialog" aria-label="Book a session">
+    <h3>Book your session</h3>
+    <p id="bookWhat">Choose how you'd like to reach us — we answer both quickly.</p>
+    <a class="choice call" id="bookCall" href="tel:+919548479582">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      Call +91 95484 79582
+    </a>
+    <a class="choice wa" id="bookWa" href="https://wa.me/919548479582" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.6-.7c.2-.2.2-.4.1-.6l-.8-1.8c-.1-.4-.3-.6-.6-.6h-.8Z"/></svg>
+      WhatsApp us
+    </a>
+    <p class="alt-number">First number busy? <a href="tel:+918279329007">+91 82793 29007</a></p>
+    <button class="book-close" type="button">Close</button>
+  </div>
+</div>
+
+<script>
+  // Booking chooser — every booking button offers call or WhatsApp
+  const bookModal = document.getElementById('bookModal');
+  const bookWa = document.getElementById('bookWa');
+  const bookWhat = document.getElementById('bookWhat');
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-book]');
+    if (trigger) {
+      e.preventDefault();
+      const what = trigger.getAttribute('data-book') || 'a session';
+      bookWa.href = 'https://wa.me/919548479582?text=' +
+        encodeURIComponent("Hi Kaashi Wellness, I'd like to book " + what + ".");
+      bookWhat.textContent = 'Booking ' + what + ' — choose how to reach us.';
+      bookModal.hidden = false;
+      return;
+    }
+    if (e.target === bookModal || e.target.closest('.book-close')) bookModal.hidden = true;
+  });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') bookModal.hidden = true; });
+
+  // Calming music — generative soundscape, no file needed.
+  // Browsers block sound before the first tap/scroll, so "autoplay"
+  // begins at the visitor's first interaction with the page.
+  const musicBtn = document.getElementById('musicToggle');
+  let actx = null, master = null, bellTimer = null, playing = false, userStopped = false;
+  const NOTES = [261.63, 311.13, 349.23, 392, 466.16, 523.25];
+  function buildAudio() {
+    actx = new (window.AudioContext || window.webkitAudioContext)();
+    master = actx.createGain();
+    master.gain.value = 0;
+    const lp = actx.createBiquadFilter();
+    lp.type = 'lowpass';
+    lp.frequency.value = 900;
+    lp.connect(actx.destination);
+    master.connect(lp);
+    [98, 98.5, 146.8].forEach((f, i) => {
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = 'sine'; o.frequency.value = f;
+      g.gain.value = i < 2 ? 0.055 : 0.028;
+      o.connect(g); g.connect(master); o.start();
+    });
+  }
+  function bell() {
+    if (!playing) return;
+    const t = actx.currentTime;
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = 'sine';
+    o.frequency.value = NOTES[Math.floor(Math.random() * NOTES.length)];
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(0.045, t + 0.5);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 8);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 8.5);
+    bellTimer = setTimeout(bell, 4500 + Math.random() * 6500);
+  }
+  function startMusic() {
+    if (!actx) buildAudio();
+    actx.resume().then(() => {
+      playing = true;
+      master.gain.cancelScheduledValues(actx.currentTime);
+      master.gain.linearRampToValueAtTime(1, actx.currentTime + 3);
+      bell();
+      musicBtn.setAttribute('aria-pressed', 'true');
+      musicBtn.setAttribute('aria-label', 'Pause calming music');
+    }).catch(() => {});
+  }
+  function stopMusic() {
+    playing = false;
+    clearTimeout(bellTimer);
+    if (master) master.gain.linearRampToValueAtTime(0, actx.currentTime + 0.8);
+    musicBtn.setAttribute('aria-pressed', 'false');
+    musicBtn.setAttribute('aria-label', 'Play calming music');
+  }
+  musicBtn.addEventListener('click', () => {
+    if (playing) { userStopped = true; stopMusic(); }
+    else { userStopped = false; startMusic(); }
+  });
+  function autoStart() {
+    if (!playing && !userStopped) startMusic();
+    removeEventListener('pointerdown', autoStart);
+    removeEventListener('touchstart', autoStart);
+    removeEventListener('scroll', autoStart);
+    removeEventListener('keydown', autoStartKey);
+  }
+  function autoStartKey(e) { if (e.key !== 'Escape') autoStart(); }
+  addEventListener('pointerdown', autoStart, {once: false});
+  addEventListener('touchstart', autoStart, {passive: true});
+  addEventListener('scroll', autoStart, {passive: true});
+  addEventListener('keydown', autoStartKey);
 </script>
 
 </body>
