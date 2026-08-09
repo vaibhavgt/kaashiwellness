@@ -606,3 +606,30 @@ footer a { display: block; text-decoration: none; font-size: 14.5px; margin-bott
 footer a:hover { opacity: 1; }
 footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 footer .note { width: 100%; margin-top: 40px; font-size: 13px; color: rgba(255,255,255,0.5); max-width: 90ch; line-height: 1.7; }
+
+/* ============ photos ============ */
+.svc-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin-bottom: 8px;
+  background: var(--grad);
+}
+.feature .visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  display: block;
+  margin-bottom: 34px;
+  background: var(--grad);
+}
+@media (max-width: 600px) { .about-photo { aspect-ratio: 3 / 2; } }
