@@ -1,5 +1,14 @@
 /* Kaashi Wellness — Misty Rose design system */
 
+/* Cinzel subset (KASHI glyphs only, 1.2KB) — self-hosted for the wordmark */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAATEAA8AAAAACTAAAARrAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgRgcKAZgP1NUQVQqAFQRCAqHSIYhCxAAATYCJAMcBCAFg2QHIBt2B8jEf2Jr/+fCoMuA2Zj1MnHNbHg/KhP/n/1mBQ9JqngIDS74w72KWCISEqczr79N7XTTvFAXct0DdsNqtdgMAqBCiAkgliT3LgBHBLZA0O05JXDuaRzpI/xgTSx/RV1361AfbKHR1mUQYAMlBKSASlnYAwZf/hvGnJQV0wXflM4QxLnAILEMcxJFIYrvDsoyL2OcF8aFewcbEgyhAkC2vwfVYQsljGu7kCz/cAhadvqMvPy8NFwIDcXii/8fI/rEF2lEA04pz9Gvwr2US5sb1pkAPN3RQAjj7R0jJKwEAjEg0pg3QC4RnGA4tOPYpcMYNBxGJrJRPG+keBnHWJ9bD1p3W3dZN6/eYjQSyLLgEpJjHrQ0FKC0EK0AXAy5IEGBhHMsGGMunDkzxrhhDBIezIn5iS2sctppsslJVrs7eV3FmWddpijgtGiS+UxId2kN7z7jghsuoEqo1Khcd5eyaJJ4rWLeMM64pDIutUKlCvDrPBBQz8++ny8aREqtctZ9yqKpgEukwDDIuNe3E5xMCIs4i0LOI+7idnQzLtUO9zHtrVfdFQluPP7463GnX//www9fT+0tens5uPFkTNk5Z3NOijqU2DQVj4G7YJIOTv7f5mOP3eZVwhdf58argWfeF1t612vaq69y4/Wn486+5JYA5cLXXkt/4w1afHhP2dOvh1/yxhuNvpxShyHpJ0LSa1MTPkxA4wv2p259wXbWY8PnzKkyf51Dho/6U+CaOPlHUaaQGfmh/Loy+FFcVNy2S2+gf31gAz/AZc8X8fk9955+r37v6fd+nBlfHr8Rk1nA4QR/XRZiRVn3hxN4wQlDoqz7QyVeMJxZwEmFvy7bY6PmEn8hVvQvqXOe0AwdQJr68UMdYSXCUOawn4xzr5faev//kBcpof8dCpu3vzF+dXEDuroSWl5z7zrPQWahxvYCuvE/Ty5/9BwhIYUipEzEGHmG634PPJ/yvOTzz5eVNb4t58ChPfadPk7TH98//VZScTRrNHsmEoqc/w4bDXJ5VN6SUFa25cbDSD+UFHL49OuHc5Nr7Ue35lXFS7LnmNe1p3+fDEs40C+p4kC9y77fbKL4ZWH+mbrzfclL39m5hVnv/39MyhVfBMHhmRq/MtPDZ8SKrff/+1bKfXoPAxzpV2wRnrM+FesQR8uIE35DnHAEqfj7K2TmiD64Ygyu3UgcPs4x9xH4mEynzseTsYqg4l58o65bSZWIBGyoGLwxpJLgjwqVA7xxROmMHVBtRJKKCIrYcIeVoxWdaEcHRuzeEQxgGHuQzO03jGYMoRMDGKHtSaqefNseJKEfQ2hHMvJhRw6OohN9mEIrepCII+hHD1pQhlYMgQ/rRx80bEESUswZRahN1f2VvchDPvKQhr3DWvyZGvtRLjGAybmaVgI8SrGZaShBB1qh4cYKMMQXutCKZmjiMEZ3AGtbPwwNMbuRaEdn7X1H0YQkNKMfvUhGHnRkohhHyb3LkIYiJKNQ7GdvEDeyzsUWGAA=) format('woff2');
+  unicode-range: U+41, U+48-49, U+4B, U+53;
+}
+
 :root {
   --grad: linear-gradient(140deg, #f2d9de 0%, #e9d9e8 48%, #dce0ee 100%);
   --grad-soft: linear-gradient(140deg, #f7e7ea, #e8ebf5);
@@ -77,21 +86,30 @@ nav.site .wrap {
   padding-bottom: 18px;
 }
 .wordmark {
-  font-family: var(--display-face);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 11px;
   color: var(--logo-green);
   text-decoration: none;
 }
-.wordmark small {
+.logo-mark { width: 38px; height: auto; flex-shrink: 0; }
+.logo-text {
+  font-family: "Cinzel", "Trajan Pro", "Baskerville", Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.logo-text small {
   display: block;
   font-family: var(--body-face);
-  font-size: 10px;
-  letter-spacing: 0.34em;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--ink-soft);
+  margin-top: 2px;
 }
 .navlinks { display: flex; gap: 30px; align-items: center; }
 .navlinks a {
@@ -364,7 +382,7 @@ h2 { font-size: clamp(28px, 3.6vw, 44px); margin-bottom: 20px; }
 footer { background: var(--ink); color: rgba(255,255,255,0.86); padding: 70px 0; }
 footer .wrap { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 footer .wordmark { color: #fff; }
-footer .wordmark small { color: rgba(255,255,255,0.55); }
+footer .logo-text small { color: rgba(255,255,255,0.55); }
 footer .cols { display: flex; gap: 70px; flex-wrap: wrap; }
 footer h4 { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0 0 14px; color: rgba(255,255,255,0.55); font-weight: 600; }
 footer a { display: block; text-decoration: none; font-size: 14.5px; margin-bottom: 9px; opacity: 0.85; }
