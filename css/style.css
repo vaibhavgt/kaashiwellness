@@ -349,7 +349,7 @@ h2 { font-size: clamp(28px, 3.6vw, 44px); margin-bottom: 20px; }
 .feature .visual svg { width: 58%; opacity: 0.9; }
 .feature ul { list-style: none; padding: 0; margin: 24px 0 34px; }
 .feature li { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px; display: flex; gap: 14px; }
-.feature li::before { content: "—"; color: var(--accent-ink); }
+.feature li::before { content: "·"; color: var(--accent-ink); font-weight: 700; }
 
 /* quotes */
 .quotes { background: var(--grad-soft); }
